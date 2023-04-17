@@ -1,0 +1,10 @@
+@startuml ユースケース図
+actor 担当者#DDDDDD;line:black;line.bold;
+rectangle 販売管理システム {
+usecase 商品の確認
+usecase 商品状況の登録
+}
+商品の確認<|-- 担当者
+商品状況の登録<|-- 担当者
+
+@enduml
