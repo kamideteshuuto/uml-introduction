@@ -9,4 +9,5 @@ usecase (<u>予約完了</u>\n拡張点\nキャンペーン期間中) as input
 input .> キャンペーン価格で予約する : <<extend>>
 input .> ログイン
 利用者-->input
+
 @enduml
