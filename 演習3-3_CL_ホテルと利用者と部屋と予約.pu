@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+class 利用者 {
+ - 名前:String
+ - 住所:String
+ - 電話番号:String
+}
+class ホテル{
+ - 部屋:String
+}
+class 部屋{
+ - タイプ:String
+ - 価格:int
+ - キャンペーン価格:int
+}
+class 予約{
+ -チェックイン日:String
+ -滞在期間:String
+ -値段:int
+}
+
+部屋 o-- ホテル
+利用者 --> 予約:予約
+利用者 --> 部屋:見る
+ホテル --> 予約:確認
+
+
