@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+class 医師 {
+ - 診察記録:String
+}
+class 患者 {
+- 名前:String
+- 年齢:String
+}
+class 医局 {
+ + 外科:String
+ + 内科:String
+ + 小児科:String
+}
+
+
+ 
+医局 "1" *-- 医師
+患者 <-- 医師:診察
