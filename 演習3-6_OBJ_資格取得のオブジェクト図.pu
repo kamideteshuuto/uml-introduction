@@ -1,0 +1,24 @@
+@startuml  
+object "利用者1" as a{
+名称:高橋洋平さん
+}
+object "利用者2" as b{
+名称:樋口正之さん
+}
+object "資格取得申請" as caption{
+名称:情報処理安全確保支援士
+日付:2020年10月21日
+}
+object "資格申請" as captio2 {
+名称:LinuC試験Level1
+日付:2021年3月28日
+}
+
+a--captio2
+b--caption
+
+a--caption
+
+
+
+@enduml
