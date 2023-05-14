@@ -1,0 +1,33 @@
+@startuml
+hide footbox
+actor 受注係 as gest
+participant "注文登録画面" as touroku
+participant "商品" as syuhin
+participant "注文" as tyuumon
+
+activate gest
+gest -> touroku
+
+
+activate touroku
+touroku -> syuhin:商品情報確認（）
+
+activate syuhin
+syuhin --> touroku:商品情報取得():情報を返す
+touroku -> touroku:商品情報表示
+
+activate touroku
+deactivate touroku
+
+
+deactivate touroku
+deactivate syuhin
+
+ 
+gest -> touroku
+activate touroku
+touroku -> tyuumon:商品登録():注文オブジェクト生成 <<include>>
+
+activate tyuumon
+
+deactivate touroku
