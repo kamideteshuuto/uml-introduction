@@ -1,0 +1,24 @@
+@startuml
+hide footbox
+actor ":ユーザ" as user
+participant ":ブラウザ" as burauza
+participant ":Webサーバー" as web
+participant ":画像サーバー" as img
+
+activate user
+user -> burauza
+
+
+activate burauza
+burauza -> web :画像ファイル名を探す
+burauza --> user:画像ファイルを再生
+activate web
+web -> img:画像ファイル名を探す
+web --> burauza:画像ファイル(閲覧可)
+
+activate img
+img -> img:画像ファイルを探す
+img --> web:画像ファイル
+
+
+deactivate user
