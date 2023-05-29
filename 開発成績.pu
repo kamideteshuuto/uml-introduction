@@ -1,0 +1,41 @@
+@startuml ユースケース図
+left to right direction
+actor 教科担当#DDDDDD;line:black;line.bold;
+actor 担任#DDDDDD;line:black;line.bold;
+rectangle 成績評価{
+' usecase ログイン
+usecase 教科の登録
+usecase 評価基準の設定
+usecase 教員の新規登録
+usecase 教員の編集
+usecase 学生の新規登録
+usecase 学生の編集
+usecase 教員の削除
+usecase 学生の削除
+usecase 評価する
+usecase 評価受け取る
+usecase 成績通知書に反映
+usecase クラス検索
+usecase 判別評定機能
+}
+教科担当-->評価基準の設定
+教科担当-->評価する
+教科担当<|--担任
+教科担当-->教員の新規登録
+教科担当-->教員の編集
+教科担当-->教員の削除
+教科担当-->クラス検索
+教科担当-->判別評定機能
+担任-->教科の登録
+担任-->学生の新規登録
+担任-->学生の編集
+担任-->学生の削除
+評価受け取る<. 成績通知書に反映: << include >>
+' 評価受け取る<.評価する
+' 学生の編集<.学生の新規登録
+' 学生の削除<.学生の新規登録
+' 教員の編集<.教員の新規登録
+' 教員の削除<.教員の新規登録
+' 評価受け取る.>成績通知書に反映
+担任-->成績通知書に反映
+@enduml

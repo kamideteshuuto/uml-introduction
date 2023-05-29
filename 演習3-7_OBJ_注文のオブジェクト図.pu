@@ -1,15 +1,18 @@
 @startuml kuruma
-' left to right direction
+left to right direction
 object "<u>利用者:重要顧客</u>" as  importuser{
 }
 object "<u>顧客情報:顧客</u>" as user1 {
-氏名=高橋洋平
+-氏名=高橋洋平
+-住所
 }
 object "<u>顧客情報:顧客</u>" as user2 {
-氏名=高田利恵
+-氏名=高田利恵
+-住所
 }
 object "<u>顧客情報:顧客</u>" as user3 {
-氏名=大坪直之
+-氏名=大坪直之
+-住所
 }
 object "<u>:商品</u>" as product1 {
 商品名=テレビ
@@ -38,13 +41,12 @@ object "<u>注文情報:注文</u>" as order4 {
 数量=0
 }
 
-product1 o-- product2 
 importuser -- user1
 user1 -- product1
 user2 -- product2
 user3 -- product3
 product1 -- order1
-
+product1 o-- product2 
 product2 -- order3
 product3 -- order4
 @enduml

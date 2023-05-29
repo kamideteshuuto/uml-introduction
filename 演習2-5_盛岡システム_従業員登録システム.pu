@@ -5,12 +5,12 @@ rectangle 従業員登録システム {
 usecase 情報を登録する
 usecase 社員情報を参照する
 usecase 変更届
-usecase 変更届確認
-usecase (修正する) as input
+usecase 修正する
+
 }
 社員 --> 変更届
-変更届確認<. 変更届: << include >>
-input <. (変更届確認) : <<extend>>
+修正する<. 変更届: << include >>
+
 変更届 --> 人事担当者
 人事担当者 --|> 情報を登録する
 社員-->社員情報を参照する
