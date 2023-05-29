@@ -1,3 +1,4 @@
+@startuml
 hide footbox
 
 actor 客 as user
@@ -11,3 +12,4 @@ kane -> botan : ボタンを押す
 botan -> benda :　商品を判別
 
 benda --> user :商品を出す
+@enduml
