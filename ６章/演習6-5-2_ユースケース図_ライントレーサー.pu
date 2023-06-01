@@ -1,20 +1,19 @@
 @startuml
 ' left to right direction
 actor 利用者#DDDDDD;line:black;line.bold;
-actor ベ#DDDDDD;line:black;line.bold;
+actor 光センサー#DDDDDD;line:black;line.bold;
+actor 左右モータ#DDDDDD;line:black;line.bold;
 
-    usecase 電源SW
-    usecase ライントレーサー
-    usecase 右モータ
-    usecase 左モータ
-    usecase 光センサー
-
-    利用者 -->電源SW:押す
-    電源SW-->ライントレーサー:[ON]の場合起動
-    電源SW-->ライントレーサー:[OFF]の場合停止
-    ライントレーサー --> 光センサー
-    光センサー-->右モータ:暗い[OFF]/明るい[ON]
-    光センサー-->左モータ:暗い[ON]/明るい[OFF]
-
-
+rectangle ライントレーサー{
+    usecase 電源OFF
+    usecase 電源ON
+    usecase ライン境界線走る
+}
+    利用者 -->電源ON
+    利用者 -->電源OFF
+    光センサー -->ライン境界線走る
+    左右モータ -->ライン境界線走る
+    ライン境界線走る -->電源ON 
+    
+    @enduml
 

@@ -1,0 +1,13 @@
+@startuml 
+left to right direction
+state 電源ON {
+    state 右旋回      
+    state 左旋回 
+    右旋回 -down-> 左旋回 : ラインを外れる
+    右旋回 <-up- 左旋回 : ラインに乗る
+}
+電源OFF -right-> 電源ON :スイッチを入れる
+電源OFF <-left- 電源ON :　　　　スイッチを切る
+[*]-->電源OFF
+電源OFF-->[*]
+@enduml
