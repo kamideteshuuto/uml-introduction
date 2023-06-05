@@ -7,4 +7,5 @@ title 宿泊予約
  :パスワード入力;
  repeat while (認証) -> [失敗] 
  :予約を行う;
- 
+ stop
+ @enduml

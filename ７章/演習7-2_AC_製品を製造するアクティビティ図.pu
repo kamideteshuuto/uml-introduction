@@ -19,3 +19,4 @@ endif
 |販売代理店|
 :入金確認;
 stop
+@enduml
